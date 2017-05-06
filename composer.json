@@ -1,0 +1,15 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:nikos-glikis/object0r-php-helpers.git"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^2.4",
+    "phpunit/phpunit": "^5.1",
+    "phalcon/incubator": "^3.1",
+    "guzzlehttp/guzzle": "^6.2",
+    "nikosglikis/object0r-php-helpers": "^1.0"
+  }
+}
