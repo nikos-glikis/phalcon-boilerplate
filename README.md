@@ -5,7 +5,7 @@ Two of the best things that happened to php is, PhalconPHP and Symfony.
 
 PhalconPHP a full-stack PHP framework delivered as a C-extension. That means incredible performance for you project.
 
-On the other side Symfomy 3.0. is probably a lot slower, but better engineered framework with a lot more features. It is developed as a set of 30 components that anyone can use separatelly on their projects.
+On the other side Symfomy 3.0. is a lot slower, but better engineered framework with a lot more features. It is developed as a set of 30 components that anyone can use separately on their projects.
 
 Where Symfony lacks:
 
@@ -21,11 +21,11 @@ Where Phalcon lacks:
 - Migrations in environments.
 - No support for PHPStorm. There is some support for autocomplete, but nothing like Symfonys PHPStorm plugin.
 
-Its good to have options. A dev must be flexiple depending on the job at hand.
+Its good to have options. A dev must be flexible depending on the job at hand.
 
-I have found that PhalconPHP is flexiple but it doesn't enforce specific architectures. It has the nessary tools for you to glue together your project. 
+I have found that PhalconPHP is flexible but it doesn't enforce specific architectures. It has the necessary tools for you to glue together your project. This concept is more complicated and takes time.
 
-This is my attempt to making Phalcon Framework more Symfony-Like, the way I prefer my environment to be setup on each project, without comprimising performance. The goal is to create a template framework to start working with so that I don't research the same issues each time I start a new project.
+This is my attempt to making Phalcon Framework more Symfony-Like, the way I prefer my environment to be setup on each project, without compromising performance. The goal is to create a template framework to start working with so that I don't research the same issues each time I start a new project.
 
 What I have added:
 
@@ -42,7 +42,7 @@ What I have added:
 		- Runs php build in web server
 		- Runs tests
 		- Shuts down php server.
-	- ./server script (Runs php build in sever usefull for dev and tests)
+	- ./server script (Runs php build in sever useful for dev and tests)
 		- ./start.sh
 		- ./stop.sh
 - Included the cli support suggested by the docs but not included in the projects.
