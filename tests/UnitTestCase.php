@@ -44,7 +44,7 @@ abstract class UnitTestCase extends PhalconTestCase
     {
         return new Client([
             // Base URI is used with relative requests
-            'base_uri' => 'http://localhost:8100/',
+            'base_uri' => 'http://localhost:8101/',
             // You can set any number of default request options.
             'timeout' => 2.0,
         ]);
