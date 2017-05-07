@@ -43,7 +43,6 @@ class Persons extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->setSchema("redrop");
     }
 
     /**
