@@ -65,13 +65,3 @@ try {
 
     exit(255);
 }
-
-try {
-    // Handle incoming arguments
-
-    $console->handle($arguments);
-} catch (\Phalcon\Exception $e) {
-    echo $e->getMessage();
-
-    exit(255);
-}
