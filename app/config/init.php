@@ -5,11 +5,11 @@ use NikosGlikis\Object0rPhpHelpers\Helpers\EnvironmentHelper;
 require_once APP_PATH . '/../vendor/autoload.php';
 
 
-
 if (!defined('ENV')) {
 
     $xEnvName = '_x_env';
-    $env = 'prod';
+
+    $env = isset($defaultEnv) ? $defaultEnv : 'prod';
 
     if (!EnvironmentHelper::isCommandLineInterface()) {
 
