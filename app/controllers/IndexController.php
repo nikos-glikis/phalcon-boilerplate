@@ -12,6 +12,11 @@ class IndexController extends ControllerBase
         $this->view->setVar('values', $values);
     }
 
+    public function exceptionAction()
+    {
+        throw new \Exception("Something bad happened.");
+    }
+
     public function indexAction()
     {
 
@@ -32,6 +37,7 @@ class IndexController extends ControllerBase
         $this->view->setVar('dataTypes', $dataTypes);
 
     }
+
 
 }
 

@@ -59,6 +59,7 @@ What I have added:
 			- mod_rewrite
 			- Composer cache volune
 - Edited .hrouter.php so that all requests work with the PHP build in server.
+- On prod environment Exceptions thrown from controllers do not contain debug information, but on other environments do.
 
 
 Resources:

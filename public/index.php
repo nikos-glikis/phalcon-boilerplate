@@ -48,8 +48,12 @@ try {
     echo $application->handle()->getContent();
 
 } catch (\Exception $e) {
-    echo $e->getMessage() . '<br>';
-    echo '<pre>' . $e->getTraceAsString() . '</pre>';
+    if (ENV == 'prod') {
+        echo "500: Some error happend.";
+    } else {
+        echo $e->getMessage() . '<br>';
+        echo '<pre>' . $e->getTraceAsString() . '</pre>';
+    }
     //TODO handle according to env
     header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
 }

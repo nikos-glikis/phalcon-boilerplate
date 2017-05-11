@@ -107,4 +107,27 @@ class EnvTest extends \UnitTestCase
 
     }
 
+    public function test500ExceptionProd()
+    {
+        $client = $this->getGuzzleClient(['http_errors' => false]);
+        $response = $client->request("GET", "index/exception");
+        $body = $response->getBody()->getContents();
+        $this->assertEquals(500, $response->getStatusCode(), "Exception error code is not 500");
+        $validMessage = '500: Some error happend.';
+        $this->assertEquals($validMessage, $body, "Exception error code is not " . $validMessage);
+    }
+
+    public function test500ExceptionTest()
+    {
+        $client = $this->getGuzzleClient(['http_errors' => false]);
+        $response = $client->request("GET", "index/exception?_x_env=test");
+        $body = $response->getBody()->getContents();
+        $this->assertEquals(500, $response->getStatusCode(), "Exception error code is not 500");
+        $validMessage = '500: Some error happend.';
+        $this->assertNotEquals($validMessage, $body, "Exception error code is " . $validMessage);
+        $validMessage = 'Something bad happened.<br>';
+        $this->assertStringStartsWith($validMessage, $body, "Exception error code does not start with " . $validMessage);
+        $this->assertContains($validMessage, $body, "Body does not contain stacktrace.");
+    }
+
 }

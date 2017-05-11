@@ -40,14 +40,16 @@ abstract class UnitTestCase extends PhalconTestCase
         }
     }
 
-    protected function getGuzzleClient()
+    protected function getGuzzleClient($options = array())
     {
-        return new Client([
+        $globalOptions = [
             // Base URI is used with relative requests
             'base_uri' => 'http://localhost:8101/',
             // You can set any number of default request options.
             'timeout' => 2.0,
-        ]);
+        ];
+        $finalOptions = array_merge($globalOptions, $options);
+        return new Client($finalOptions);
     }
 
 }
