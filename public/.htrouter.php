@@ -19,17 +19,25 @@
   +------------------------------------------------------------------------+
 */
 
-if (!file_exists(__DIR__ . '/' . $_SERVER['REQUEST_URI'])) {
-    if (strpos($_SERVER['REQUEST_URI'], '?') !== false) {
+if (!file_exists(__DIR__ . '/' . $_SERVER['REQUEST_URI']))
+{
+    if (strpos($_SERVER['REQUEST_URI'], '?') !== false)
+    {
         list($url, $other) = explode('?', $_SERVER['REQUEST_URI']);
         $_GET['_url'] = $url;
-        if ($other && strpos($other, '&') !== false) {
+        if ($other && strpos($other, '&') !== false)
+        {
             $params = explode('&', $other);
-            foreach ($params as $param) {
+            foreach ($params as $param)
+            {
                 list($key, $value) = explode('=', $param);
                 $_GET[$key] = $value;
             }
         }
+    }
+    else
+    {
+        $_GET['_url'] = $_SERVER['REQUEST_URI'];
     }
 
 }
